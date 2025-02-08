@@ -1,0 +1,19 @@
+.site-title img {
+  width: 130px;
+  scale: 0.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actions > a:first-child {
+  flex-basis: 100%;
+}
+
+@media (max-width: 800px) {
+  .actions > a:first-child {
+    justify-content: center;
+  }
+}
