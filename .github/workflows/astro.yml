@@ -31,11 +31,12 @@ jobs:
           node-version: "lts/*"
           cache: "pnpm"
           cache-dependency-path: "${{ env.BUILD_PATH }}/pnpm-lock.yaml"
-          check-latest: true
-          registry-url: "https://registry.npmjs.org/"
 
-      - name: Enable Corepack (pnpm)
-        run: corepack enable
+      - name: Enable and Install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+          pnpm --version
 
       - name: Setup Pages
         id: pages
